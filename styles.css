@@ -1,0 +1,310 @@
+/* =========================================
+   1. IMPORTATION & BASE
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f0f7f2; /* Vert menthe pâle */
+    padding-bottom: 40px;
+}
+
+/* Images responsives */
+img, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(20, 77, 41, 0.15);
+    background-color: #fff;
+}
+
+/* =========================================
+   2. VERSION MOBILE (Par défaut)
+   ========================================= */
+
+/* Header Mobile (Simple) */
+.site-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin: -20px -20px 30px -20px;
+    border-bottom: 4px solid #FFC72C;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #144d29;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
+
+.dot {
+    color: #FFC72C;
+}
+
+/* Menu masqué sur mobile */
+.nav-links {
+    display: none;
+}
+
+/* Typographie */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #144d29;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #144d29;
+    font-weight: 700;
+}
+
+p {
+    max-width: 42ch;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+/* Bouton CTA Mobile */
+button {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    background-color: #FFC72C;
+    color: #144d29;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 0 #cca025;
+}
+
+/* Sections & Listes */
+main { padding: 0 20px; }
+section { margin-bottom: 3.5rem; }
+ul { padding-left: 20px; margin-bottom: 1.5rem; }
+li { margin-bottom: 0.8rem; }
+
+/* Aside masqué sur mobile */
+aside { display: none; }
+
+/* Cartes Avis */
+article {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-left: 6px solid #FFC72C;
+}
+
+article h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #144d29;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+article p { font-style: italic; color: #666; }
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #dcebdc;
+    font-size: 0.85rem;
+    color: #8899a6;
+    text-align: center;
+}
+footer a { color: #8899a6; text-decoration: none; }
+
+
+/* =========================================
+   3. VERSION DESKTOP (> 900px)
+   ========================================= */
+@media (min-width: 900px) {
+
+    /* Layout Général */
+    main {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER PREMIUM (FIXÉ & STYLÉ) --- */
+    
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.95); /* Blanc transparent */
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        margin: 0; /* Reset marges négatives mobile */
+        width: 100%;
+        text-align: left; /* Reset alignement mobile */
+        display: block; 
+    }
+
+    /* Le conteneur Flexbox */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+        
+        display: flex !important; /* Force le flexbox */
+        justify-content: space-between; /* Ecarte logo et menu */
+        align-items: center;
+    }
+
+    /* Le Logo */
+    .logo {
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Le Menu de Navigation */
+    .nav-links {
+        display: flex !important; /* Rend le menu visible et horizontal */
+        gap: 40px;
+        list-style: none !important; /* ENLÈVE LES PUCES */
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    /* Les liens classiques */
+    .nav-links a:not(.btn-login) {
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        color: #555;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s;
+    }
+    
+    .nav-links a:not(.btn-login):hover {
+        color: #144d29;
+    }
+
+    /* Le Bouton Connexion */
+    .btn-login {
+        background-color: #144d29;
+        color: white !important;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.2s;
+        box-shadow: 0 4px 10px rgba(20,77,41, 0.3);
+    }
+
+    .btn-login:hover {
+        transform: translateY(-3px);
+        background-color: #0f3d20;
+    }
+
+    /* --- RESTE DU DESKTOP --- */
+
+    /* Hero */
+    main > section:first-of-type {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    main > section:first-of-type p {
+        margin: 0 auto 20px auto; 
+    }
+
+    button {
+        width: auto; 
+        display: inline-block;
+        padding: 16px 50px;
+    }
+
+    img, svg {
+        margin: 40px auto;
+        max-width: 70%;
+    }
+
+    /* Grille 3 colonnes (Features) */
+    section ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 0;
+    }
+
+    section ul li {
+        list-style: none;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        text-align: center;
+        border: 1px solid #eef; 
+    }
+
+    /* Grille 2 colonnes (Avis) */
+    #avis {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    #avis h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    article { margin: 0; height: 100%; }
+
+    /* Aside */
+    aside {
+        display: block;
+        background-color: #144d29;
+        color: white;
+        padding: 50px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 80px auto;
+        max-width: 700px;
+    }
+    
+    aside h2 { color: #FFC72C; margin-top:0; }
+    aside p { color: #fff; margin-bottom: 25px; }
+    aside a {
+        display: inline-block;
+        background: white; color: #144d29; padding: 12px 30px;
+        border-radius: 30px; text-decoration: none; font-weight: bold;
+    }
+}
