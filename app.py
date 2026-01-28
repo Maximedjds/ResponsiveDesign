@@ -11,7 +11,7 @@ try:
     
     # On lit style.css qui est juste à côté
     # ⚠️ IMPORTANT : Vérifie que ton fichier s'appelle bien "style.css" (sans 's' ou avec 's' selon ton choix)
-    css_content = Path("style.css").read_text(encoding="utf-8")
+    css_content = Path("styles.css").read_text(encoding="utf-8")
     
     # 3. On mélange le CSS et le HTML pour l'affichage
     full_code = f"<style>{css_content}</style>{html_content}"
